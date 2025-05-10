@@ -34,39 +34,44 @@
 
 **重要：初始化数据库表**
 
- *   数据库创建后，你会看到数据库的概览页面。点击 `控制台` 标签页。
-    *   复制下面的第一段 SQL 命令，粘贴到控制台的输入框中，然后点击 `执行`：
-      ```sql
-      CREATE TABLE IF NOT EXISTS admin_credentials (
-        username TEXT PRIMARY KEY,
-        password TEXT NOT NULL
-      );
-      ```
-      
-    *   复制下面的第二段 SQL 命令，粘贴并点击 `执行`：
-      ```sql
-      CREATE TABLE IF NOT EXISTS servers (
-        id TEXT PRIMARY KEY,
-        name TEXT NOT NULL,
-        description TEXT,
-        api_key TEXT NOT NULL UNIQUE,
-        created_at INTEGER NOT NULL,
-        sort_order INTEGER
-      );
-      ```
-      
-    *   复制下面的第三段 SQL 命令，粘贴并点击 `执行`：
-      ```sql
-      CREATE TABLE IF NOT EXISTS metrics (
-        server_id TEXT PRIMARY KEY,
-        timestamp INTEGER,
-        cpu TEXT,
-        memory TEXT,
-        disk TEXT,
-        network TEXT,
-        FOREIGN KEY(server_id) REFERENCES servers(id) ON DELETE CASCADE
-      );
-      ```
+ - **步骤1：数据库创建后**  
+  你会看到数据库的概览页面。点击 `控制台` 标签页。
+
+- **步骤2：执行第一段 SQL 命令**  
+  复制下面的 SQL 命令，粘贴到控制台的输入框中，然后点击 `执行`：  
+  ```sql
+  CREATE TABLE IF NOT EXISTS admin_credentials (
+    username TEXT PRIMARY KEY,
+    password TEXT NOT NULL
+  );
+  ```
+
+- **步骤3：执行第二段 SQL 命令**  
+  复制下面的 SQL 命令，粘贴并点击 `执行`：  
+  ```sql
+  CREATE TABLE IF NOT EXISTS servers (
+    id TEXT PRIMARY KEY,
+    name TEXT NOT NULL,
+    description TEXT,
+    api_key TEXT NOT NULL UNIQUE,
+    created_at INTEGER NOT NULL,
+    sort_order INTEGER
+  );
+  ```
+
+- **步骤4：执行第三段 SQL 命令**  
+  复制下面的 SQL 命令，粘贴并点击 `执行`：  
+  ```sql
+  CREATE TABLE IF NOT EXISTS metrics (
+    server_id TEXT PRIMARY KEY,
+    timestamp INTEGER,
+    cpu TEXT,
+    memory TEXT,
+    disk TEXT,
+    network TEXT,
+    FOREIGN KEY(server_id) REFERENCES servers(id) ON DELETE CASCADE
+  );
+  ```
 
     *   现在你的数据库表结构已经准备好了。
 
