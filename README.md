@@ -109,9 +109,8 @@ Worker 需要访问你之前创建的 D1 数据库。
 2.  选择 **触发器** 子菜单。
 3.  在 **Cron 触发器** 部分，点击 **添加 Cron 触发器**。
 4.  **计划 (Cron 表达式):**
-    *   为了实现每分钟检查一次（推荐用于快速检测），输入 `* * * * *`。
-    *   如果想降低频率，例如每5分钟，输入 `*/5 * * * *`。
-    *   Cloudflare 免费版 Worker 对 Cron 触发器有频率限制（例如，最快可能为每分钟或每5分钟）。
+    *   选择`计划`，执行 Worker 的频率选择`小时`，下面的框填入1（即每整点检测一次网站）。
+    *   Cloudflare 免费版 Worker 对 Cron 触发器有频率限制
 5.  点击 **添加**。
 
 ### 5. 访问面板
@@ -146,9 +145,7 @@ Agent 是一个需要在你的 VPS 上运行的脚本，用于收集状态信息
 
 1.  SSH 登录到你的 VPS。
 2.  **下载并运行安装脚本：**
-    脚本会自动从你的 Worker URL (`https://<你的Worker地址>/install.sh`) 下载。
-    确保将 `<你的Worker地址>` 替换为你的实际 Worker URL。
-
+    
     ```bash
     wget https://raw.githubusercontent.com/JohnMing143/vps-monitor/main/agent-vps-monitor.sh -O agent-vps-monitor.sh && chmod +x agent-vps-monitor.sh && ./agent-vps-monitor.sh
     ```
