@@ -42,6 +42,7 @@
         password TEXT NOT NULL
       );
       ```
+      
     *   复制下面的第二段 SQL 命令，粘贴并点击 `执行`：
       ```sql
       CREATE TABLE IF NOT EXISTS servers (
@@ -53,6 +54,7 @@
         sort_order INTEGER
       );
       ```
+      
     *   复制下面的第三段 SQL 命令，粘贴并点击 `执行`：
       ```sql
       CREATE TABLE IF NOT EXISTS metrics (
