@@ -1,4 +1,4 @@
-[English](https://github.com/JohnMing143/vps-monitor/blob/main/README_EN)
+[English](https://github.com/JohnMing143/vps-monitor/blob/main/README_EN.md)
 # VPS 监控面板 (Cloudflare Worker + D1 版) - 部署与使用指南
 
 这是一个部署在 Cloudflare Workers 上的现代化 VPS 及网站监控面板，使用 Cloudflare D1 数据库存储数据，并通过美观的卡片式界面和图表展示服务器状态。本指南将引导你通过 Cloudflare 网页控制面板完成部署，无需使用命令行工具。
